@@ -11,9 +11,9 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : ComponentActivity() {
-    private lateinit var binding: ActivityMainBinding
-   private lateinit var recyclerView:RecyclerView
-   private lateinit var postAppAdapter: PostAppAdapter
+    lateinit var binding: ActivityMainBinding
+    lateinit var recyclerView:RecyclerView
+   lateinit var postAppAdapter: PostAppAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
 
 
     }
-    private fun fetchPosts() {
+    fun fetchPosts() {
         val apiInterface =
             ApiClient.buildApiInterface(PostsApiInterface::class.java)
         val request = apiInterface.fetchPosts()
